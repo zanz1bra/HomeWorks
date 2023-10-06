@@ -85,6 +85,13 @@ print("new: \(qty) MacBook Pro with the price of: \(price) EUR, will cost you: \
  Fix this Fatal error inside the if-else statements to print whenever this age can be converted to Int or not!
  */
 
+let userInputAge: String? = "33a"
+//print(Int(userInputAge))
+if let string = userInputAge, let myInt = Int(string){
+    print("Int: \(myInt)")
+} else {
+    print("Could not convert to Int")
+}
 
 /*
  Ex5:
