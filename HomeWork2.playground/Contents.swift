@@ -44,7 +44,7 @@ print("When dividing \(numberOne) by \(numberTwo), the result is \(result), the 
  print("new: \(qty) MacBook Pro with the price of: \(price) EUR, will cost you: \(totalSum) Eur")
  */
 
-/*
+/* 1ST TRY, UNSUCCESSFUL
  var qty: Int = 8
  
  if qty < 5 {
@@ -86,7 +86,6 @@ print("new: \(qty) MacBook Pro with the price of: \(price) EUR, will cost you: \
  */
 
 let userInputAge: String? = "33a"
-//print(Int(userInputAge))
 if let string = userInputAge, let myInt = Int(string){
     print("Int: \(myInt)")
 } else {
