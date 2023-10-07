@@ -39,8 +39,45 @@ for evenNumber in numbers {
  Inside the for loop create randomNumber for the random Int calculation. Calculate and print("Number 5 will be after \(counter) shuffles"). Don't forget to make a break inside the if statement.
  */
 
+/*var counter = 0
+var randomNumber = Int.random(in: 1...20)
+
+while randomNumber != 5 {
+    counter += 1
+    randomNumber = Int.random(in: 1...20)
+}
+
+print("Number 5 will be after \(counter) shuffles")
+*/
+
+var counter = 0
+
+for _ in 1...20 {
+    var randomNumber = Int.random(in: 1...20)
+    counter += 1
+    if randomNumber == 5 {
+        print("Number 5 will be after \(counter) shuffles")
+        break
+    }
+}
 
 /*
  Exercise 4
  A bug is climbing to a 10-meter electric post. During the day, bug can climb two meters, during the night she slides down to 1 meter. Determine with the help of the cycle how many days bug will climb on the top of the post. Think about which loop to use in which situation. print("bug will spend \(numberOfDays)) to reach top of the post")
  */
+
+var post = 10
+var climbPerDay = 2
+var slidePerDay = 1
+var numberOfDays = 0
+var totalClimbed = 0
+
+while totalClimbed < post {
+    totalClimbed += climbPerDay
+    numberOfDays += 1
+    if totalClimbed >= post {
+        break
+    }
+    totalClimbed -= slidePerDay
+}
+ print("The bug will spend \(numberOfDays) days to reach the top of the post")
