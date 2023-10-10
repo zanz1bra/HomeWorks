@@ -12,7 +12,9 @@ var second: Float = 3.98
 
 var third: Double = Double(first + second)
 
-print(third)
+let formatted = String(format: "%.2f", third)
+
+print(formatted)
 
 /*
  Ex2:
@@ -63,7 +65,7 @@ print("When dividing \(numberOne) by \(numberTwo), the result is \(result), the 
      print("new: \(qty) MacBook Pro with the price of: \(price) EUR, will cost you: \(totalSum)")
  */
 
-var qty: Int = 8
+var qty: Int = 13
 var price: Int
 var totalSum: Int
 
@@ -98,8 +100,38 @@ if let string = userInputAge, let myInt = Int(string){
  print("Total years: \(totalYearsFromBirth) , total months: \(totalMonthFromBirth), total days: \(totalDaysFromBirth) have passed")
  */
 
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd/MM/yyyy"
+let birthday = dateFormatter.date(from: "21/11/1989") ?? Date()
+let today = Date()
+let calendar = Calendar.current
+let totalDaysFromBirth = calendar.dateComponents([.day], from: birthday, to: today).day
+let totalMonthsFromBirth = calendar.dateComponents([.month], from: birthday, to: today).month
+let totalYearsFromBirth = calendar.dateComponents([.year], from: birthday, to: today).year
+
+if totalDaysFromBirth != 0 || totalMonthsFromBirth != 0 || totalYearsFromBirth != 0 {
+    print("Total years: \(totalYearsFromBirth), total months: \(totalMonthsFromBirth), total days: \(totalDaysFromBirth) have passed")
+} else {
+    print("Something here is very wrong")
+}
+
 /*
  Ex6:
  Use Exercise 5 monthOfBirth to calculate in which quarter of the year you were born.
  Use switch case to print("I was born in the ... quarter")
  */
+
+if let monthOfBirth = calendar.dateComponents([.month], from: birthday).month {
+    switch monthOfBirth {
+    case 1...3:
+        print("I was born in the first quarter!")
+    case 4...6:
+        print("I was born in the second quarter!")
+    case 7...9:
+        print("I was born in the third quarter!")
+    case 10...12:
+        print("I was born in the fourth quarter!")
+    default:
+        print("This is wrong")
+    }
+}
