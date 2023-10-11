@@ -39,17 +39,6 @@ for evenNumber in numbers {
  Inside the for loop create randomNumber for the random Int calculation. Calculate and print("Number 5 will be after \(counter) shuffles"). Don't forget to make a break inside the if statement.
  */
 
-/*var counter = 0
-var randomNumber = Int.random(in: 1...20)
-
-while randomNumber != 5 {
-    counter += 1
-    randomNumber = Int.random(in: 1...20)
-}
-
-print("Number 5 will be after \(counter) shuffles")
-*/
-
 var counter = 0
 
 for _ in 1...20 {
@@ -60,6 +49,16 @@ for _ in 1...20 {
         break
     }
 }
+
+///different solution
+var numberToCheck = 5
+var shuffleCounts = 0
+
+while numberToCheck != 5 {
+    numberToCheck = Int.random(in: 1...20)
+    shuffleCounts += 1
+}
+print("Number 5 will be after \(shuffleCounts) shuffles")
 
 /*
  Exercise 4
@@ -81,3 +80,20 @@ while totalClimbed < post {
     totalClimbed -= slidePerDay
 }
  print("The bug will spend \(numberOfDays) days to reach the top of the post")
+
+///different solution
+var distance = 0
+var days = 0
+var isDay = true
+
+while distance != 10 {
+    if isDay {
+        distance += 2
+        days += 1
+        isDay = false
+    } else {
+        distance -= 1
+        isDay = true
+    }
+}
+print("The bug will spend \(days) days to reach the top of the post")
