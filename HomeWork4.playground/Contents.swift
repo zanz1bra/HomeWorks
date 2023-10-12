@@ -101,7 +101,7 @@ func createArray(start: Int, end: Int) -> Array<Int> {
     return myArray
 }
 
-let myArray = createArray(start: 1, end: 100)
+var myArray = createArray(start: 1, end: 100)
 print(myArray)
 
 /*
@@ -113,6 +113,11 @@ print(myArray)
  It should be 1/2 of createArray and started from [1,3,5.....
  */
 
-for _ in myArray {
-    
+for number in myArray {
+    if isEvenNumber(number) {
+        if let index = myArray.firstIndex(of: number) {
+            myArray.remove(at: index)
+        }
+    }
 }
+print(myArray)
