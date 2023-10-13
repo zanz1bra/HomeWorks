@@ -55,12 +55,8 @@ calculateCash()
 
 var number = Int.random(in: 1...20)
 
-func isEvenNumber1() {
-    if number % 2 == 0 {
-        print(true)
-    } else {
-        print("This is NOT an even number")
-    }
+func isEvenNumber1() -> Bool{
+    return number % 2 == 0
 }
 
 isEvenNumber1()
@@ -78,17 +74,6 @@ isEvenNumber(8)
  Create a func createArray to calculate some number from start: to end: than return Int array.
  Declare array and put createArray(from: 1, to: 100)
  print(array)
- */
-
-/*
- 
- func createArray(start: Int, end: Int) -> Array<Int> {
-    return myArray
-}
-
-let myArray = [createArray(start: 1, end: 100)]
-print(myArray)
- 
  */
 
 func createArray(start: Int, end: Int) -> Array<Int> {
