@@ -16,7 +16,7 @@ import UIKit
 let myTeam = "Girls"
 
 var resultsOfGames: [String : String] = [
-    "Broklyn Nets" : "99:88",
+    "Broklyn Nets" : ["99:88", "109:99"],
     "Washington Wizards" : "107:122",
     "Dallas Maverics" : "104:97"
 ]
@@ -42,7 +42,8 @@ func calculateCash() {
         sum += number
     }
     
-    print("The sum of cash inside my wallet is \(sum) eur")
+    //print("The sum of cash inside my wallet is \(sum) eur")
+    return sum
 }
 
 calculateCash()
@@ -55,7 +56,7 @@ calculateCash()
 
 var number = Int.random(in: 1...20)
 
-func isEvenNumber1() -> Bool{
+func isEvenNumber1() -> Bool {
     return number % 2 == 0
 }
 
@@ -106,3 +107,6 @@ for number in myArray {
     }
 }
 print(myArray)
+
+
+myArray.removeAll(where: isEvenNumber)
